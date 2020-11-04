@@ -732,7 +732,7 @@ a:hover {
 }
 
 .about-mf .about-img img {
-  margin-left: 10px;
+  margin: 0px;
 }
 
 @media (min-width: 767px) {
@@ -768,12 +768,12 @@ a:hover {
   margin-bottom: 3rem;
 }
 
-.service-box:hover .ico-circle {
-  transition: all 500ms ease;
-  color: #fff;
-  background-color: #0078ff;
-  box-shadow: 0 0 0 10px #cde1f8;
-}
+/*.service-box:hover .ico-circle {*/
+/*  transition: all 500ms ease;*/
+/*  color: #fff;*/
+/*  background-color: #0078ff;*/
+/*  box-shadow: 0 0 0 10px #cde1f8;*/
+/*}*/
 
 .service-box .service-ico {
   margin-bottom: 1rem;
@@ -787,7 +787,6 @@ a:hover {
 
 .service-box .s-title {
   font-size: 1.4rem;
-  text-transform: uppercase;
   text-align: center;
   padding: .4rem 0;
 }

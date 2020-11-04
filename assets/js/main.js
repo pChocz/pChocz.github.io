@@ -123,7 +123,7 @@ particlesJS.load('particles-js-contact', 'assets/particlesjs-config.json');
     var typed_strings = $('.text-slider-items').text();
     var typed = new Typed('.text-slider', {
       strings: typed_strings.split(','),
-      typeSpeed: 80,
+      typeSpeed: 100,
       loop: true,
       backDelay: 1100,
       backSpeed: 30
