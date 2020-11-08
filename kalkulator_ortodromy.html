@@ -3,7 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
     <meta name="keywords"
           content="kalkulator ortodromy, ortodroma, żegluga po ortodromie, wierzchołki ortodromy, odległość ortodromiczna, kąty drogi, Piotr Choczyński, nawigacja">
     <meta name="description"
@@ -21,7 +26,40 @@
 
 
 <body>
-<form name="form">
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col">
+            col-1
+        </div>
+
+        <div class="col">
+            col-1
+        </div>
+
+        <div class="col">
+            col-1
+        </div>
+
+    </div>
+
+
+
+
+
+    <form name="form-prim" onsubmit="calculate(this.form)">
+
+    </form>
+</div>
+
+
+
+
+
+
+<form name="form" onsubmit="calculate(this.form)">
     <div class="textAreaColumn" style="margin-left: 30px; margin-top: 30px;">
         <div class="custom3">
             <div class="well custom_well">
@@ -33,47 +71,40 @@
                     </tr>
                     <tr>
                         <td style="vertical-align:middle">A</td>
-                        <td><input type="text" name="a_szer_kat" size="4"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)"> °
-                            <input type="text" name="a_szer_min" size="5"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)"> '
+                        <td><input type="text" name="a_szer_kat" size="4"> °
+                            <input type="text" name="a_szer_min" size="5"> '
                             <input type="text" name="a_szer_strona" value="N" size="2" readonly="readonly"
-                                   style="text-align:center"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)">
+                                   style="text-align:center">
                             <input type="button" class="btn btn-default btn-xs custom_strona" value="N/S"
                                    onClick="zamien_ns(form.a_szer_strona)">
                             <br>
-                            <input type="text" name="a_dlug_kat" size="4"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)"> °
-                            <input type="text" name="a_dlug_min" size="5"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)"> '
+                            <input type="text" name="a_dlug_kat" size="4"> °
+                            <input type="text" name="a_dlug_min" size="5"> '
                             <input type="text" name="a_dlug_strona" value="E" size="2" readonly="readonly"
-                                   style="text-align:center"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)">
+                                   style="text-align:center">
                             <input type="button" class="btn btn-default btn-xs custom_strona" value="E/W"
-                                   onClick="zamien_ew(form.a_dlug_strona)"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)">
+                                   onClick="zamien_ew(form.a_dlug_strona)">
                         </td>
                     </tr>
                     <tr>
                         <td style="vertical-align:middle">B</td>
                         <td><input type="text" name="b_szer_kat" size="4"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)"> °
+                                   onkeypress="if (event.keyCode === 13) calculate(this.form)"> °
                             <input type="text" name="b_szer_min" size="5"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)"> '
+                                   onkeypress="if (event.keyCode === 13) calculate(this.form)"> '
                             <input type="text" name="b_szer_strona" value="N" size="2" readonly="readonly"
                                    style="text-align:center"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)">
+                                   onkeypress="if (event.keyCode === 13) calculate(this.form)">
                             <input type="button" class="btn btn-default btn-xs custom_strona" value="N/S"
                                    onClick="zamien_ns(form.b_szer_strona)">
                             <br>
                             <input type="text" name="b_dlug_kat" size="4"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)"> °
+                                   onkeypress="if (event.keyCode === 13) calculate(this.form)"> °
                             <input type="text" name="b_dlug_min" size="5"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)"> '
+                                   onkeypress="if (event.keyCode === 13) calculate(this.form)"> '
                             <input type="text" name="b_dlug_strona" value="E" size="2" readonly="readonly"
                                    style="text-align:center"
-                                   onkeypress="if (event.keyCode == 13) glowny_guzik(this.form)">
+                                   onkeypress="if (event.keyCode === 13) calculate(this.form)">
                             <input type="button" class="btn btn-default btn-xs custom_strona" value="E/W"
                                    onClick="zamien_ew(form.b_dlug_strona)">
                         </td>
@@ -85,7 +116,7 @@
                 <button type="button" class="btn btn-default custom szary_2" onClick="fclear(this.form);instrukcja()">
                     Wyczyść/Info
                 </button>
-                <button type="button" class="btn btn-default custom szary_2" onClick="glowny_guzik(this.form)">
+                <button type="button" class="btn btn-default custom szary_2" onClick="calculate(this.form)">
                     Przelicz
                 </button>
             </div>
@@ -169,13 +200,11 @@
                 <br>
             </div>
         </div>
-
     </div>
-
-
 </form>
 
 <!-- Vendor JS Files -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Template Main JS File -->

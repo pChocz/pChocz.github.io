@@ -1,4 +1,22 @@
-instrukcja()
+/*
+    Logic for calculating orthodrome
+ */
+
+// instrukcja()
+
+
+$(function() {
+    $('form').each(function() {
+        $(this).find('input').keypress(function(e) {
+            // Enter pressed?
+            if(e.keyCode === 10 || e.keyCode === 13) {
+                calculate(this.form)
+            }
+        });
+
+        $(this).find('input[type=submit]').hide();
+    });
+});
 
 
 //---funkcja czyszcząca stronę po naciśnięciu guzika---//
@@ -564,7 +582,7 @@ function instrukcja() {
 
 
 //----------najważniejsza funkcja - wywołanie wszystkich obliczeń----------//
-function glowny_guzik(form) {
+function calculate(form) {
 
     //-----zerowanie niewprowadzonych elementów-----//
     puste_zerowanie(form.a_szer_kat)
@@ -759,7 +777,7 @@ function przyklad_01(form) {
     form.b_dlug_kat.value = "170"
     form.b_dlug_strona.value = "E"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -777,7 +795,7 @@ function przyklad_02(form) {
     form.b_dlug_kat.value = "90"
     form.b_dlug_strona.value = "E"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -795,7 +813,7 @@ function przyklad_03(form) {
     form.b_dlug_kat.value = "60"
     form.b_dlug_strona.value = "E"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -813,7 +831,7 @@ function przyklad_04(form) {
     form.b_dlug_kat.value = "100"
     form.b_dlug_strona.value = "W"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -831,7 +849,7 @@ function przyklad_05(form) {
     form.b_dlug_kat.value = "140"
     form.b_dlug_strona.value = "E"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -849,7 +867,7 @@ function przyklad_06(form) {
     form.b_dlug_kat.value = "160"
     form.b_dlug_strona.value = "W"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -867,7 +885,7 @@ function przyklad_07(form) {
     form.b_dlug_kat.value = "120"
     form.b_dlug_strona.value = "W"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -885,7 +903,7 @@ function przyklad_08(form) {
     form.b_dlug_kat.value = "130"
     form.b_dlug_strona.value = "W"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -907,7 +925,7 @@ function przyklad_11(form) {
     form.b_dlug_kat.value = "0"
     form.b_dlug_strona.value = "E"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -925,7 +943,7 @@ function przyklad_12(form) {
     form.b_dlug_kat.value = "150"
     form.b_dlug_strona.value = "W"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -944,7 +962,7 @@ function przyklad_13(form) {
     form.b_dlug_kat.value = "30"
     form.b_dlug_strona.value = "E"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
@@ -963,7 +981,7 @@ function przyklad_14(form) {
     form.b_dlug_kat.value = "50"
     form.b_dlug_strona.value = "W"
 
-    glowny_guzik(this.form)
+    calculate(this.form)
 
 }
 
