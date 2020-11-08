@@ -1,0 +1,124 @@
+html {
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: rgb(250, 250, 250);
+}
+
+
+.textAreaColumn {
+    width: 100%;
+}
+
+.textAreaColumn div {
+    float: left;
+    width: 500px;
+    padding: 10px;
+    box-sizing: border-box;
+    /*font-family:  "Courier New", Courier, monospace;*/
+    font-family: "Lucida Console", Monaco, monospace;
+    /*font-family:    "Lucida Console", monospace;*/
+
+    font-size: 13px;
+    /*font-weight:  bold;*/
+}
+
+.textAreaColumn div textarea {
+    background: transparent;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    height: 610px;
+    resize: none;
+    overflow: hidden;
+}
+
+.custom {
+    width: 150px !important;
+}
+
+.custom2 {
+    width: 300px !important;
+}
+
+.custom3 {
+    width: 330px !important;
+}
+
+.custom_strona {
+    width: 50px !important;
+}
+
+.form-control {
+    width: 50px !important;
+}
+
+.custom_well {
+    width: 298px !important;
+    margin-left: 10px !important;
+    margin-top: -10px !important;
+    height: 180px !important;
+
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: black !important;
+    border-radius: 0 !important;
+}
+
+.custom_well_2 {
+    width: 490px !important;
+    margin-right: 8px !important;
+    height: 629px !important;
+
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: black !important;
+    border-radius: 0 !important;
+}
+
+.szary {
+    background-color: rgb(245, 245, 245) !important;
+
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: black !important;
+
+    font-family: "Lucida Console", Monaco, monospace !important;
+    font-size: 11px !important;
+    border-radius: 0 !important;
+}
+
+.szary_2 {
+    background-color: rgb(225, 225, 225) !important;
+
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: black !important;
+
+    font-family: "Lucida Console", Monaco, monospace !important;
+    font-size: 14px !important;
+
+    height: 55px !important;
+    margin-top: 10px !important;
+    margin-bottom: -10px !important;
+    border-radius: 0 !important;
+}
+
+.bottom {
+    vertical-align: bottom !important;
+}
+
+.przyklady {
+    margin-bottom: -15px !important;
+    padding-top: 3px !important;
+    padding-bottom: 2px !important;
+}
+
+.margin {
+    margin-bottom: 30px !important;
+
+}
+
