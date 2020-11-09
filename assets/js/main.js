@@ -6,8 +6,11 @@
 */
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles-js-intro', 'assets/particlesjs-config.json');
-particlesJS.load('particles-js-contact', 'assets/particlesjs-config.json');
+particlesJS.load('particles-js-intro', './assets/particlesjs-config.json');
+particlesJS.load('particles-js-contact', './assets/particlesjs-config.json');
+
+particlesJS.load('particles-js-intro', '../assets/particlesjs-config.json');
+
 
 (function($) {
   "use strict";
