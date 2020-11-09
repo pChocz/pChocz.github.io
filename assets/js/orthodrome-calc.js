@@ -2,14 +2,21 @@
     Logic for calculating orthodrome
  */
 
-// instrukcja()
+// instrukcja();
+
+document.addEventListener('readystatechange', event => {
+    // When HTML/DOM elements are ready:
+    if (event.target.readyState === "interactive") {   //does same as:  ..addEventListener("DOMContentLoaded"..
+        instrukcja();
+    }
+});
 
 
-$(function() {
-    $('form').each(function() {
-        $(this).find('input').keypress(function(e) {
+$(function () {
+    $('form').each(function () {
+        $(this).find('input').keypress(function (e) {
             // Enter pressed?
-            if(e.keyCode === 10 || e.keyCode === 13) {
+            if (e.keyCode === 10 || e.keyCode === 13) {
                 calculate(this.form)
             }
         });
