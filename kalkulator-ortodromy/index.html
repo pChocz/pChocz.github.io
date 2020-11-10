@@ -64,168 +64,193 @@
 
                                     <div class="col-md-6 mb-2">
 
-                                        <div class="lead ml-3">
-                                            START
-                                        </div>
-                                        <div class="input-group p-1">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 text-center lead">
+                                                START
+                                            </div>
+                                            <div class="col-auto d-flex justify-content-center">
+                                                <div class="input-group p-1">
 
-                                            <div class="input-group-prepend" style="width: 50px">
+                                                    <div class="input-group-prepend" style="width: 50px">
                                             <span class="input-group-text w-100 p-1 justify-content-center"
                                                   id="">LAT</span>
+                                                    </div>
+
+                                                    <input type="text" name="a_szer_kat"
+                                                           class="form-control max-100-px-width">
+
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">°</span>
+                                                    </div>
+
+                                                    <input type="text" name="a_szer_min"
+                                                           class="form-control border-left-0 max-100-px-width">
+
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">'</span>
+                                                    </div>
+
+                                                    <div class="input-group-append" style="width: 30px">
+                                                        <input class="input-group-text w-100 p-1 justify-content-center"
+                                                               type="text"
+                                                               name="a_szer_strona"
+                                                               value="N"
+                                                               readonly="readonly">
+                                                    </div>
+
+                                                    <div class="input-group-append" style="width: 50px">
+                                                        <button class="btn btn-outline-secondary shadow-none border-custom-light w-100 p-1 justify-content-center"
+                                                                type="button"
+                                                                onClick="zamien_ns(form.a_szer_strona)">
+                                                            N/S
+                                                        </button>
+                                                    </div>
+
+                                                </div>
                                             </div>
+                                            <div class="col-auto d-flex justify-content-center">
+                                                <div class="input-group p-1">
 
-                                            <input type="text" name="a_szer_kat" class="form-control max-100-px-width">
-
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">°</span>
-                                            </div>
-
-                                            <input type="text" name="a_szer_min" class="form-control max-100-px-width">
-
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">'</span>
-                                            </div>
-
-                                            <div class="input-group-append" style="width: 30px">
-                                                <input class="input-group-text w-100 p-1 justify-content-center"
-                                                       type="text"
-                                                       name="a_szer_strona"
-                                                       value="N"
-                                                       readonly="readonly">
-                                            </div>
-
-                                            <div class="input-group-append" style="width: 50px">
-                                                <button class="btn btn-outline-secondary w-100 p-1 justify-content-center"
-                                                        type="button"
-                                                        onClick="zamien_ns(form.a_szer_strona)">
-                                                    N/S
-                                                </button>
-                                            </div>
-
-                                        </div>
-                                        <div class="input-group p-1">
-
-                                            <div class="input-group-prepend" style="width: 50px">
+                                                    <div class="input-group-prepend" style="width: 50px">
                                             <span class="input-group-text w-100 p-1 justify-content-center"
                                                   id="">LON</span>
+                                                    </div>
+
+                                                    <input type="text" name="a_dlug_kat"
+                                                           class="form-control max-100-px-width">
+
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">°</span>
+                                                    </div>
+
+                                                    <input type="text" name="a_dlug_min"
+                                                           class="form-control border-left-0 max-100-px-width">
+
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">'</span>
+                                                    </div>
+
+                                                    <div class="input-group-append" style="width: 30px">
+                                                        <input class="input-group-text w-100 p-1 justify-content-center"
+                                                               type="text"
+                                                               name="a_dlug_strona"
+                                                               value="E"
+                                                               readonly="readonly">
+                                                    </div>
+
+                                                    <div class="input-group-append" style="width: 50px">
+                                                        <button class="btn btn-outline-secondary shadow-none border-custom-light w-100 p-1 justify-content-center"
+                                                                type="button"
+                                                                onClick="zamien_ew(form.a_dlug_strona)">
+                                                            N/S
+                                                        </button>
+                                                    </div>
+
+                                                </div>
                                             </div>
-
-                                            <input type="text" name="a_dlug_kat" class="form-control max-100-px-width">
-
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">°</span>
-                                            </div>
-
-                                            <input type="text" name="a_dlug_min" class="form-control max-100-px-width">
-
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">'</span>
-                                            </div>
-
-                                            <div class="input-group-append" style="width: 30px">
-                                                <input class="input-group-text w-100 p-1 justify-content-center"
-                                                       type="text"
-                                                       name="a_dlug_strona"
-                                                       value="E"
-                                                       readonly="readonly">
-                                            </div>
-
-                                            <div class="input-group-append" style="width: 50px">
-                                                <button class="btn btn-outline-secondary w-100 p-1 justify-content-center"
-                                                        type="button"
-                                                        onClick="zamien_ew(form.a_dlug_strona)">
-                                                    N/S
-                                                </button>
-                                            </div>
-
                                         </div>
-                                    </div>
 
+                                    </div>
 
                                     <div class="col-md-6 mb-2">
 
-                                        <div class="lead ml-3">
-                                            META
-                                        </div>
-                                        <div class="input-group p-1">
+                                        <div class="row justify-content-center">
 
-                                            <div class="input-group-prepend" style="width: 50px">
+                                            <div class="col-12 text-center lead">
+                                                META
+                                            </div>
+
+                                            <div class="col-auto d-flex justify-content-center">
+                                                <div class="input-group p-1">
+
+                                                    <div class="input-group-prepend" style="width: 50px">
                                             <span class="input-group-text w-100 p-1 justify-content-center"
                                                   id="">LAT</span>
+                                                    </div>
+
+                                                    <input type="text" name="b_szer_kat"
+                                                           class="form-control max-100-px-width">
+
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">°</span>
+                                                    </div>
+
+                                                    <input type="text" name="b_szer_min"
+                                                           class="form-control border-left-0 max-100-px-width">
+
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">'</span>
+                                                    </div>
+
+                                                    <div class="input-group-append" style="width: 30px">
+                                                        <input class="input-group-text w-100 p-1 justify-content-center"
+                                                               type="text"
+                                                               name="b_szer_strona"
+                                                               value="N"
+                                                               readonly="readonly">
+                                                    </div>
+
+                                                    <div class="input-group-append" style="width: 50px">
+                                                        <button class="btn btn-outline-secondary shadow-none border-custom-light w-100 p-1 justify-content-center"
+                                                                type="button"
+                                                                onClick="zamien_ns(form.b_szer_strona)">
+                                                            N/S
+                                                        </button>
+                                                    </div>
+
+                                                </div>
                                             </div>
 
-                                            <input type="text" name="b_szer_kat" class="form-control max-100-px-width">
+                                            <div class="col-auto d-flex justify-content-center">
+                                                <div class="input-group p-1">
 
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">°</span>
-                                            </div>
-
-                                            <input type="text" name="b_szer_min" class="form-control max-100-px-width">
-
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">'</span>
-                                            </div>
-
-                                            <div class="input-group-append" style="width: 30px">
-                                                <input class="input-group-text w-100 p-1 justify-content-center"
-                                                       type="text"
-                                                       name="b_szer_strona"
-                                                       value="N"
-                                                       readonly="readonly">
-                                            </div>
-
-                                            <div class="input-group-append" style="width: 50px">
-                                                <button class="btn btn-outline-secondary w-100 p-1 justify-content-center"
-                                                        type="button"
-                                                        onClick="zamien_ns(form.b_szer_strona)">
-                                                    N/S
-                                                </button>
-                                            </div>
-
-                                        </div>
-                                        <div class="input-group p-1">
-
-                                            <div class="input-group-prepend" style="width: 50px">
+                                                    <div class="input-group-prepend" style="width: 50px">
                                             <span class="input-group-text w-100 p-1 justify-content-center"
                                                   id="">LON</span>
-                                            </div>
+                                                    </div>
 
-                                            <input type="text" name="b_dlug_kat" class="form-control max-100-px-width">
+                                                    <input type="text" name="b_dlug_kat"
+                                                           class="form-control max-100-px-width">
 
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">°</span>
-                                            </div>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">°</span>
+                                                    </div>
 
-                                            <input type="text" name="b_dlug_min" class="form-control max-100-px-width">
+                                                    <input type="text" name="b_dlug_min"
+                                                           class="form-control border-left-0 max-100-px-width">
 
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">'</span>
-                                            </div>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">'</span>
+                                                    </div>
 
-                                            <div class="input-group-append" style="width: 30px">
-                                                <input class="input-group-text w-100 p-1 justify-content-center"
-                                                       type="text"
-                                                       name="b_dlug_strona"
-                                                       value="E"
-                                                       readonly="readonly">
-                                            </div>
+                                                    <div class="input-group-append" style="width: 30px">
+                                                        <input class="input-group-text w-100 p-1 justify-content-center"
+                                                               type="text"
+                                                               name="b_dlug_strona"
+                                                               value="E"
+                                                               readonly="readonly">
+                                                    </div>
 
-                                            <div class="input-group-append" style="width: 50px">
-                                                <button class="btn btn-outline-secondary w-100 p-1 justify-content-center"
-                                                        type="button"
-                                                        onClick="zamien_ew(form.b_dlug_strona)">
-                                                    N/S
-                                                </button>
+                                                    <div class="input-group-append" style="width: 50px">
+                                                        <button class="btn btn-outline-secondary shadow-none border-custom-light w-100 p-1 justify-content-center"
+                                                                type="button"
+                                                                onClick="zamien_ew(form.b_dlug_strona)">
+                                                            N/S
+                                                        </button>
+                                                    </div>
+
+                                                </div>
                                             </div>
 
                                         </div>
                                     </div>
 
+
                                     <div class="col-12 p-2 d-flex justify-content-center">
-                                        <button type="button" class="btn btn-primary m-1"
+                                        <button type="button" class="btn btn-primary shadow-none m-1"
                                                 onClick="calculate(this.form)">Przelicz
                                         </button>
-                                        <button type="button" class="btn btn-secondary m-1"
+                                        <button type="button" class="btn btn-secondary shadow-none m-1"
                                                 onClick="fclear(this.form);instrukcja()">Wyczyść/Info
                                         </button>
                                     </div>
@@ -238,35 +263,41 @@
                                     </div>
                                     <div class="col-12 mb-2">
                                         <div class="btn-group w-100">
-                                            <button type="button" class="btn btn-primary border-light"
+                                            <button type="button" class="btn btn-primary shadow-none border-light"
                                                     onClick="przyklad_01(this.form)">
                                                 A(10°N;050°E)<br>B(20°N;170°E)
                                             </button>
-                                            <button type="button" class="btn btn-primary border-light d-none d-sm-block"
+                                            <button type="button"
+                                                    class="btn btn-primary shadow-none border-light d-none d-sm-block"
                                                     onClick="przyklad_03(this.form)">
                                                 A(50°N;030°E)<br>B(30°N;060°E)
                                             </button>
-                                            <button type="button" class="btn btn-primary border-light d-none d-lg-block"
+                                            <button type="button"
+                                                    class="btn btn-primary shadow-none border-light d-none d-lg-block"
                                                     onClick="przyklad_04(this.form)">
                                                 A(50°N;170°W)<br>B(10°S;100°W)
                                             </button>
-                                            <button type="button" class="btn btn-primary border-light d-none d-lg-block"
+                                            <button type="button"
+                                                    class="btn btn-primary shadow-none border-light d-none d-lg-block"
                                                     onClick="przyklad_05(this.form)">
                                                 A(30°S;060°E)<br>B(40°S;140°E)
                                             </button>
-                                            <button type="button" class="btn btn-primary border-light d-none d-xl-block"
+                                            <button type="button"
+                                                    class="btn btn-primary shadow-none border-light d-none d-xl-block"
                                                     onClick="przyklad_06(this.form)">
                                                 A(20°S;100°W)<br>B(30°N;160°W)
                                             </button>
-                                            <button type="button" class="btn btn-primary border-light d-none d-xl-block"
+                                            <button type="button"
+                                                    class="btn btn-primary shadow-none border-light d-none d-xl-block"
                                                     onClick="przyklad_07(this.form)">
                                                 A(0°;070°E)<br>B(20°S;120°W)
                                             </button>
-                                            <button type="button" class="btn btn-primary border-light d-none d-xl-block"
+                                            <button type="button"
+                                                    class="btn btn-primary shadow-none border-light d-none d-xl-block"
                                                     onClick="przyklad_08(this.form)">
                                                 A(40°S;090°W)<br>B( 0° ;130°W)
                                             </button>
-                                            <button type="button" class="btn btn-primary border-light"
+                                            <button type="button" class="btn btn-primary shadow-none border-light"
                                                     onClick="przyklad_02(this.form)">
                                                 A(50°N;020°W)<br>B(50°N;090°E)
                                             </button>
@@ -281,11 +312,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="btn-group w-100">
-                                            <button type="button" class="btn btn-primary border-light w-50"
+                                            <button type="button" class="btn btn-primary shadow-none border-light w-50"
                                                     onClick="przyklad_11(this.form)">
                                                 A(90°N)<br>B(90°S)
                                             </button>
-                                            <button type="button" class="btn btn-primary border-light w-50"
+                                            <button type="button" class="btn btn-primary shadow-none border-light w-50"
                                                     onClick="przyklad_12(this.form)">
                                                 A(40°N;030°E)<br>B(40°S;150°W)
                                             </button>
@@ -293,11 +324,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="btn-group w-100">
-                                            <button type="button" class="btn btn-primary border-light w-50"
+                                            <button type="button" class="btn btn-primary shadow-none border-light w-50"
                                                     onClick="przyklad_13(this.form)">
                                                 A(20°N;030°E)<br>B(40°S;030°E)
                                             </button>
-                                            <button type="button" class="btn btn-primary border-light w-50"
+                                            <button type="button" class="btn btn-primary shadow-none border-light w-50"
                                                     onClick="przyklad_14(this.form)">
                                                 A(0°;010°E)<br>B(0°;050°W)
                                             </button>
@@ -331,13 +362,13 @@
                         </div>
                     </div>
 
-                    <div class="col-8 mb-3 d-flex justify-content-start">
-                        kalkulator ortodromy v2.0
+                    <div class="col-7 mb-3 d-flex justify-content-start">
+                        Kalkulator Ortodromy v2.0
                     </div>
 
-                    <div class="col-4 mb-3 d-flex justify-content-end">
+                    <div class="col-5 mb-3 d-flex justify-content-end">
                         <a href="zestaw-wzorow-v2.1-elektr.pdf" target="_blank">
-                            tablice do ściągnięcia
+                            Tablice wzorów <i class="fa fa-download"></i>
                         </a>
                     </div>
 

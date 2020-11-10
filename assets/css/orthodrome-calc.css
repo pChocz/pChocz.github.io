@@ -29,3 +29,7 @@
     resize: none;
     overflow: hidden;
 }
+
+.border-custom-light {
+    border-color: #ced4da !important;
+}
