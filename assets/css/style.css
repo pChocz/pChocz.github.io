@@ -453,7 +453,7 @@ a:hover {
 .navbar-b.navbar-trans .nav-link, .navbar-b.navbar-reduce .nav-link {
   color: #fff;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .navbar-b.navbar-trans .nav-link:before, .navbar-b.navbar-reduce .nav-link:before {
@@ -543,7 +543,7 @@ a:hover {
 .navbar-b .navbar-brand {
   color: #fff;
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .navbar-b .navbar-nav .dropdown-item.show .dropdown-menu,
@@ -649,7 +649,7 @@ a:hover {
 
 .intro .intro-title {
   color: #fff;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 3rem;
 }
 
@@ -661,7 +661,7 @@ a:hover {
 
 .intro .intro-subtitle {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 200 !important;
 }
 
 @media (min-width: 768px) {
