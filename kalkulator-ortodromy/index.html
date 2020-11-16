@@ -101,7 +101,7 @@
                                                     <div class="input-group-append" style="width: 50px">
                                                         <button class="btn btn-outline-secondary shadow-none border-custom-light w-100 p-1 justify-content-center"
                                                                 type="button"
-                                                                onClick="zamien_ns(form.a_szer_strona)">
+                                                                onClick="changeNorthSouth(form.a_szer_strona)">
                                                             N/S
                                                         </button>
                                                     </div>
@@ -141,7 +141,7 @@
                                                     <div class="input-group-append" style="width: 50px">
                                                         <button class="btn btn-outline-secondary shadow-none border-custom-light w-100 p-1 justify-content-center"
                                                                 type="button"
-                                                                onClick="zamien_ew(form.a_dlug_strona)">
+                                                                onClick="changeEastWest(form.a_dlug_strona)">
                                                             N/S
                                                         </button>
                                                     </div>
@@ -193,7 +193,7 @@
                                                     <div class="input-group-append" style="width: 50px">
                                                         <button class="btn btn-outline-secondary shadow-none border-custom-light w-100 p-1 justify-content-center"
                                                                 type="button"
-                                                                onClick="zamien_ns(form.b_szer_strona)">
+                                                                onClick="changeNorthSouth(form.b_szer_strona)">
                                                             N/S
                                                         </button>
                                                     </div>
@@ -234,7 +234,7 @@
                                                     <div class="input-group-append" style="width: 50px">
                                                         <button class="btn btn-outline-secondary shadow-none border-custom-light w-100 p-1 justify-content-center"
                                                                 type="button"
-                                                                onClick="zamien_ew(form.b_dlug_strona)">
+                                                                onClick="changeEastWest(form.b_dlug_strona)">
                                                             N/S
                                                         </button>
                                                     </div>
@@ -251,7 +251,7 @@
                                                 onClick="calculate(this.form)">Przelicz
                                         </button>
                                         <button type="button" class="btn btn-secondary shadow-none m-1"
-                                                onClick="fclear(this.form);instrukcja()">Wyczyść/Info
+                                                onClick="fClear(this.form);instrukcja()">Wyczyść/Info
                                         </button>
                                     </div>
 

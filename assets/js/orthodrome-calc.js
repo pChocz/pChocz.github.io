@@ -27,7 +27,7 @@ $(function () {
 
 
 //---funkcja czyszcząca stronę po naciśnięciu guzika---//
-function fclear(form) {
+function fClear(form) {
     //---zerowaniu punktu A
     form.a_szer_kat.value = ""
     form.a_szer_min.value = ""
@@ -54,7 +54,7 @@ function fclear(form) {
 
 
 //----Funkcje zamieniajace N/S i E/W----//
-function zamien_ns(strona) {
+function changeNorthSouth(strona) {
     if (strona.value == "N") {
         strona.value = "S"
     } else {
@@ -62,7 +62,7 @@ function zamien_ns(strona) {
     }
 }
 
-function zamien_ew(strona) {
+function changeEastWest(strona) {
     if (strona.value == "E") {
         strona.value = "W"
     } else {
@@ -74,7 +74,7 @@ function zamien_ew(strona) {
 
 
 //----zerowanie niewprowadzonych do formularza wartości----//
-function puste_zerowanie(invalue) {
+function fillEmptyWithZeros(invalue) {
     if (invalue.value == null || invalue.value.length == 0) {
         invalue.value = 0
     }
@@ -84,7 +84,7 @@ function puste_zerowanie(invalue) {
 
 
 //----przeliczanie stopni do formatu dziesiętnego----//
-function dm2deg(stopnie, minuty, strona) {
+function decimalToDegrees(stopnie, minuty, strona) {
     var znak = 1
 
     if (strona.value == "S" || strona.value == "W")
@@ -99,7 +99,7 @@ function dm2deg(stopnie, minuty, strona) {
 
 //------wypisanie wartości kątów w formacie DM 000°00.0'------//
 //------------------------------------------------------------//
-function dm2deg_tekst(wartosc) {
+function decimalToDegreesAsText(wartosc) {
     var wartosc_kat = Math.floor(Math.abs(wartosc))
     var wartosc_min = (Math.abs(wartosc) - wartosc_kat) * 60
 
@@ -136,7 +136,7 @@ function dm2deg_tekst(wartosc) {
 
 
 //------wypisanie wartości kątów w formacie DM 00°00.0'------//
-function dm2deg_tekst_szer(wartosc) {
+function decimalToDegreesForLatitude(wartosc) {
     var wartosc_kat = Math.floor(Math.abs(wartosc))
     var wartosc_min = (Math.abs(wartosc) - wartosc_kat) * 60
 
@@ -165,7 +165,7 @@ function dm2deg_tekst_szer(wartosc) {
 
 
 //--------------walidacja danych--------------//
-function walidacja(a_szer, a_szer_kat, a_szer_min, a_dlug, a_dlug_kat, a_dlug_min, b_szer, b_szer_kat, b_szer_min, b_dlug, b_dlug_kat, b_dlug_min) {
+function validate(a_szer, a_szer_kat, a_szer_min, a_dlug, a_dlug_kat, a_dlug_min, b_szer, b_szer_kat, b_szer_min, b_dlug, b_dlug_kat, b_dlug_min) {
 
     var i = 0
 
@@ -310,25 +310,25 @@ function wierzcholki_ortodromy(fi_A, fi_B, lambda_A, lambda_B) {
 function wypis_wspolrzednych_AB(fi_A, fi_B, lambda_A, lambda_B) {
     form.komentarz_obl.value += '\n'
         + ' -----przeliczone szerokości/długości punktów A oraz B----\n'
-        + '  φ_A = ' + dm2deg_tekst_szer(fi_A) + '\t' + 'λ_A = ' + dm2deg_tekst(lambda_A) + '\n'
-        + '  φ_B = ' + dm2deg_tekst_szer(fi_B) + '\t' + 'λ_B = ' + dm2deg_tekst(lambda_B) + '\n'
+        + '  φ_A = ' + decimalToDegreesForLatitude(fi_A) + '\t' + 'λ_A = ' + decimalToDegreesAsText(lambda_A) + '\n'
+        + '  φ_B = ' + decimalToDegreesForLatitude(fi_B) + '\t' + 'λ_B = ' + decimalToDegreesAsText(lambda_B) + '\n'
         + ' ---------------------------------------------------------\n\n'
 }
 
 function komentarz_tekst(fi_A, fi_B, lambda_A, lambda_B, a, b, ortodroma, A, B, C, alfa, beta, kierunek, h1, h2, loksodroma) {
 
     form.komentarz_obl.value += ' --------podstawowe długości oraz kąty w trójkącie--------\n'
-        + '  a =' + dm2deg_tekst(a) + '\n'
-        + '  b =' + dm2deg_tekst(b) + '\n\n'
+        + '  a =' + decimalToDegreesAsText(a) + '\n'
+        + '  b =' + decimalToDegreesAsText(b) + '\n\n'
 
-        + '  C =' + dm2deg_tekst(C) + '\n'
+        + '  C =' + decimalToDegreesAsText(C) + '\n'
 
-        + '  A =' + dm2deg_tekst(A) + '             h =' + dm2deg_tekst(h1) + '  v ' + dm2deg_tekst(h2) + '\n'
-        + '  B =' + dm2deg_tekst(B) + '\n'
+        + '  A =' + decimalToDegreesAsText(A) + '             h =' + decimalToDegreesAsText(h1) + '  v ' + decimalToDegreesAsText(h2) + '\n'
+        + '  B =' + decimalToDegreesAsText(B) + '\n'
         + ' ---------------------------------------------------------\n\n'
 
         + ' -----------------odległość ortodromiczna-----------------\n'
-        + '  d =' + dm2deg_tekst(ortodroma) + ' = ' + (ortodroma * 60).toFixed(2) + ' Mm' + '\n'
+        + '  d =' + decimalToDegreesAsText(ortodroma) + ' = ' + (ortodroma * 60).toFixed(2) + ' Mm' + '\n'
         + ' ---------------------------------------------------------\n\n'
 
         + ' -----------------odległość loksodromiczna----------------\n'
@@ -336,8 +336,8 @@ function komentarz_tekst(fi_A, fi_B, lambda_A, lambda_B, a, b, ortodroma, A, B, 
         + ' ---------------------------------------------------------\n\n'
 
         + ' ------------------------kąty drogi-----------------------\n'
-        + '  α =' + dm2deg_tekst(alfa) + '\n'
-        + '  β =' + dm2deg_tekst(beta) + '\n'
+        + '  α =' + decimalToDegreesAsText(alfa) + '\n'
+        + '  β =' + decimalToDegreesAsText(beta) + '\n'
         + ' ---------------------------------------------------------\n\n'
 
     form.komentarz.value += '\n\n\n\n\n\n\n\n\n\n'
@@ -387,17 +387,17 @@ function szczegolny_przypadek_rownik(fi_A, fi_B, lambda_A, lambda_B, a, b, C, or
         + '  posiada dwa kąty proste (przy punktach A,B)' + '\n\n\n\n\n\n\n\n'
 
     form.komentarz_obl.value += ' --------podstawowe długości oraz kąty w trójkącie--------\n'
-        + '  a =' + dm2deg_tekst(a) + '\n'
-        + '  b =' + dm2deg_tekst(b) + '\n\n'
+        + '  a =' + decimalToDegreesAsText(a) + '\n'
+        + '  b =' + decimalToDegreesAsText(b) + '\n\n'
 
-        + '  C =' + dm2deg_tekst(C) + '\n'
+        + '  C =' + decimalToDegreesAsText(C) + '\n'
 
         + '  A =' + " 090°00.0'" + "             h = 090°00.0'" + '\n'
         + '  B =' + " 090°00.0'" + '\n'
         + ' ---------------------------------------------------------\n\n'
 
         + ' -----------------odległość ortodromiczna-----------------\n'
-        + '  d =' + dm2deg_tekst(ortodroma) + ' = ' + (ortodroma * 60).toFixed(2) + ' Mm' + '\n'
+        + '  d =' + decimalToDegreesAsText(ortodroma) + ' = ' + (ortodroma * 60).toFixed(2) + ' Mm' + '\n'
         + ' ---------------------------------------------------------\n\n'
 
         + ' -----------------odległość loksodromiczna----------------\n'
@@ -447,8 +447,8 @@ function szczegolny_przypadek_poludnik(fi_A, fi_B, lambda_A, lambda_B, a, b, C, 
     form.komentarz.value += '  kątów A, B oraz h' + '\n\n\n\n\n\n\n'
 
     form.komentarz_obl.value += ' --------podstawowe długości oraz kąty w trójkącie--------\n'
-    form.komentarz_obl.value += '  a =' + dm2deg_tekst(a) + '\n'
-    form.komentarz_obl.value += '  b =' + dm2deg_tekst(b) + '\n\n'
+    form.komentarz_obl.value += '  a =' + decimalToDegreesAsText(a) + '\n'
+    form.komentarz_obl.value += '  b =' + decimalToDegreesAsText(b) + '\n\n'
 
     form.komentarz_obl.value += '  C =' + " 000°00.0'" + '\n'
 
@@ -457,7 +457,7 @@ function szczegolny_przypadek_poludnik(fi_A, fi_B, lambda_A, lambda_B, a, b, C, 
     form.komentarz_obl.value += ' ---------------------------------------------------------\n\n'
 
     form.komentarz_obl.value += ' -----------------odległość ortodromiczna-----------------\n'
-    form.komentarz_obl.value += '  d =' + dm2deg_tekst(ortodroma) + ' = ' + (ortodroma * 60).toFixed(2) + ' Mm' + '\n'
+    form.komentarz_obl.value += '  d =' + decimalToDegreesAsText(ortodroma) + ' = ' + (ortodroma * 60).toFixed(2) + ' Mm' + '\n'
     form.komentarz_obl.value += ' ---------------------------------------------------------\n\n'
 
         + ' -----------------odległość loksodromiczna----------------\n'
@@ -530,8 +530,8 @@ function szczegolny_przypadek_naprzeciwko(fi_A, fi_B, lambda_A, lambda_B, a, b, 
 
 
     form.komentarz_obl.value += ' --------podstawowe długości oraz kąty w trójkącie--------\n'
-    form.komentarz_obl.value += '  a =' + dm2deg_tekst(a) + '\n'
-    form.komentarz_obl.value += '  b =' + dm2deg_tekst(b) + '\n\n'
+    form.komentarz_obl.value += '  a =' + decimalToDegreesAsText(a) + '\n'
+    form.komentarz_obl.value += '  b =' + decimalToDegreesAsText(b) + '\n\n'
 
     form.komentarz_obl.value += '  C =' + " 180°00.0'" + '\n'
 
@@ -540,7 +540,7 @@ function szczegolny_przypadek_naprzeciwko(fi_A, fi_B, lambda_A, lambda_B, a, b, 
     form.komentarz_obl.value += ' ---------------------------------------------------------\n\n'
 
     form.komentarz_obl.value += ' -----------------odległość ortodromiczna-----------------\n'
-    form.komentarz_obl.value += '  d =' + dm2deg_tekst(ortodroma) + ' = ' + (ortodroma * 60).toFixed(2) + ' Mm' + '\n'
+    form.komentarz_obl.value += '  d =' + decimalToDegreesAsText(ortodroma) + ' = ' + (ortodroma * 60).toFixed(2) + ' Mm' + '\n'
     form.komentarz_obl.value += ' ---------------------------------------------------------\n\n'
 
         + ' -----------------odległość loksodromiczna----------------\n'
@@ -592,14 +592,14 @@ function instrukcja() {
 function calculate(form) {
 
     //-----zerowanie niewprowadzonych elementów-----//
-    puste_zerowanie(form.a_szer_kat)
-    puste_zerowanie(form.a_szer_min)
-    puste_zerowanie(form.a_dlug_kat)
-    puste_zerowanie(form.a_dlug_min)
-    puste_zerowanie(form.b_szer_kat)
-    puste_zerowanie(form.b_szer_min)
-    puste_zerowanie(form.b_dlug_kat)
-    puste_zerowanie(form.b_dlug_min)
+    fillEmptyWithZeros(form.a_szer_kat)
+    fillEmptyWithZeros(form.a_szer_min)
+    fillEmptyWithZeros(form.a_dlug_kat)
+    fillEmptyWithZeros(form.a_dlug_min)
+    fillEmptyWithZeros(form.b_szer_kat)
+    fillEmptyWithZeros(form.b_szer_min)
+    fillEmptyWithZeros(form.b_dlug_kat)
+    fillEmptyWithZeros(form.b_dlug_min)
     //----------------------------------------------//
 
 
@@ -632,16 +632,16 @@ function calculate(form) {
 
 
     //-----wywołanie funkcji walidującej dane wejściowe-----//
-    var wal = walidacja(a_szer, a_szer_kat, a_szer_min, a_dlug, a_dlug_kat, a_dlug_min, b_szer, b_szer_kat, b_szer_min, b_dlug, b_dlug_kat, b_dlug_min)
+    var wal = validate(a_szer, a_szer_kat, a_szer_min, a_dlug, a_dlug_kat, a_dlug_min, b_szer, b_szer_kat, b_szer_min, b_dlug, b_dlug_kat, b_dlug_min)
 
     if (wal == 1) {
 
         //-----przeliczenie współrzędnych z uwzględnieniem konwencji znaków-----//
-        var fi_A = dm2deg(a_szer_kat, a_szer_min, form.a_szer_strona)
-        var fi_B = dm2deg(b_szer_kat, b_szer_min, form.b_szer_strona)
+        var fi_A = decimalToDegrees(a_szer_kat, a_szer_min, form.a_szer_strona)
+        var fi_B = decimalToDegrees(b_szer_kat, b_szer_min, form.b_szer_strona)
 
-        var lambda_A = dm2deg(a_dlug_kat, a_dlug_min, form.a_dlug_strona)
-        var lambda_B = dm2deg(b_dlug_kat, b_dlug_min, form.b_dlug_strona)
+        var lambda_A = decimalToDegrees(a_dlug_kat, a_dlug_min, form.a_dlug_strona)
+        var lambda_B = decimalToDegrees(b_dlug_kat, b_dlug_min, form.b_dlug_strona)
         //----------------------------------------------------------------------//
 
         wypis_wspolrzednych_AB(fi_A, fi_B, lambda_A, lambda_B)
@@ -755,8 +755,8 @@ function calculate(form) {
             komentarz_tekst(fi_A, fi_B, lambda_A, lambda_B, a, b, ortodroma, A, B, C, alfa, beta, kierunek, h1, h2, loksodroma)
 
             form.komentarz_obl.value += ' -------------------wierzchołki ortodromy-----------------\n'
-            form.komentarz_obl.value += '  W1 (' + dm2deg_tekst_szer(Math.abs(mi)) + ' ' + W1_NS + ' ;' + dm2deg_tekst(Math.abs(lambda_w1)) + ' ' + W1_EW + ' )\n'
-            form.komentarz_obl.value += '  W2 (' + dm2deg_tekst_szer(Math.abs(mi)) + ' ' + W2_NS + ' ;' + dm2deg_tekst(Math.abs(lambda_w2)) + ' ' + W2_EW + ' )\n'
+            form.komentarz_obl.value += '  W1 (' + decimalToDegreesForLatitude(Math.abs(mi)) + ' ' + W1_NS + ' ;' + decimalToDegreesAsText(Math.abs(lambda_w1)) + ' ' + W1_EW + ' )\n'
+            form.komentarz_obl.value += '  W2 (' + decimalToDegreesForLatitude(Math.abs(mi)) + ' ' + W2_NS + ' ;' + decimalToDegreesAsText(Math.abs(lambda_w2)) + ' ' + W2_EW + ' )\n'
             form.komentarz_obl.value += ' ---------------------------------------------------------\n'
 
 
@@ -772,7 +772,7 @@ function calculate(form) {
 
 //przyklad_01     A(10°N;050°E) -> B(20°N;170°E)
 function przyklad_01(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "10"
     form.a_szer_strona.value = "N"
@@ -790,7 +790,7 @@ function przyklad_01(form) {
 
 //przyklad_02     A(50°N;020°W) -> B(50°N;090°E)
 function przyklad_02(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "50"
     form.a_szer_strona.value = "N"
@@ -808,7 +808,7 @@ function przyklad_02(form) {
 
 //przyklad_03     A(50°N;030°E) -> B(30°N;060°E)
 function przyklad_03(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "50"
     form.a_szer_strona.value = "N"
@@ -826,7 +826,7 @@ function przyklad_03(form) {
 
 //przyklad_04     A(50°N;170°W) -> B(10°S;100°W)
 function przyklad_04(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "50"
     form.a_szer_strona.value = "N"
@@ -844,7 +844,7 @@ function przyklad_04(form) {
 
 //przyklad_05     A(30°S;060°E) -> B(40°S;140°E)
 function przyklad_05(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "30"
     form.a_szer_strona.value = "S"
@@ -862,7 +862,7 @@ function przyklad_05(form) {
 
 //przyklad_06     A(20°S;100°W) -> B(30°N;160°W)
 function przyklad_06(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "20"
     form.a_szer_strona.value = "S"
@@ -880,7 +880,7 @@ function przyklad_06(form) {
 
 //przyklad_07     A( 0° ;070°E) -> B(20°S;120°W)
 function przyklad_07(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "0"
     form.a_szer_strona.value = "N"
@@ -898,7 +898,7 @@ function przyklad_07(form) {
 
 //przyklad_08     A(40°S;090°W) -> B( 0° ;130°W)
 function przyklad_08(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "40"
     form.a_szer_strona.value = "S"
@@ -920,7 +920,7 @@ function przyklad_08(form) {
 
 //przykład_11    A(90°N      ) -> B(90°S      )
 function przyklad_11(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "90"
     form.a_szer_strona.value = "N"
@@ -938,7 +938,7 @@ function przyklad_11(form) {
 
 //przykład_12    A(40°N;030°E) -> B(40°S;150°W)
 function przyklad_12(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "40"
     form.a_szer_strona.value = "N"
@@ -957,7 +957,7 @@ function przyklad_12(form) {
 
 //przykład_13    A(20°N;030°E) -> B(40°S;030°E)
 function przyklad_13(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "20"
     form.a_szer_strona.value = "N"
@@ -976,7 +976,7 @@ function przyklad_13(form) {
 
 //przykład_14    A( 0° ;010°E)<br>B( 0° ;050°W)
 function przyklad_14(form) {
-    fclear(this.form)
+    fClear(this.form)
 
     form.a_szer_kat.value = "0"
     form.a_szer_strona.value = "N"
