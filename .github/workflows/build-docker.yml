@@ -14,7 +14,6 @@ jobs:
 
       - name: build and push the image
         run: |
-          echo ${{ secrets.GH_PAT }} | docker login ghcr.io -u pChocz --password-stdin
-          #docker login --username pChocz --password ${{ secrets.GH_PAT }} ghcr.io
+          echo $secrets.GH_PAT | docker login ghcr.io -u pChocz --password-stdin
           docker build . --tag ghcr.io/pchocz/homepage:latest
           docker push ghcr.io/pchocz/homepage:latest
